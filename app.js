@@ -2,24 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+const adminRoutes = require("./routes/admin");
+const userRoutes = require("./routes/shop");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/add-product", (req, res, next) => {
-  console.log("Midle....");
-  res.send(
-    "<html><body><form action='/product' method='POST'><input type='text' name='message'><button type='submit'>Send</button></form></body></html>"
-  );
-});
+app.use("/admin", adminRoutes);
+app.use(userRoutes);
 
-app.use("/product", (req, res, next) => {
-  console.log(req.body);
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  console.log("two Midle....");
-  res.send("<h1>Home Page</h1>");
+//error page
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page No Found</h1>");
 });
 
 app.listen(3000);
