@@ -2,10 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const productControllers = require("../controllers/products");
+const adminControllers = require("../controllers/admin");
 
-router.get("/add-product", productControllers.getAddProdutc);
+router.get("/add-product", adminControllers.getAddProducts);
 
-router.post("/add-product", productControllers.postAddProdutcs);
+router.get("/products", adminControllers.getProducts);
+
+router.post("/add-product", adminControllers.postAddProdutcs);
 
 exports.routes = router;

@@ -4,7 +4,7 @@ const path = require("path");
 
 const rootDIr = require("./util/path");
 const admin = require("./routes/admin");
-const user = require("./routes/shop");
+const shop = require("./routes/shop");
 const errorControlers = require("./controllers/error");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(rootDIr, "public")));
 
 app.use("/admin", admin.routes);
-app.use(user.routes);
+app.use(shop.routes);
 
 //error page
 app.use(errorControlers.Pages404);

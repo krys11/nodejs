@@ -4,8 +4,6 @@ const rootDir = require("../util/path");
 
 const p = path.join(rootDir, "data", "products.json");
 
-//const products = [];
-
 module.exports = classPoduct = {
   addProducts: (item) => {
     fs.readFile(p, (err, data) => {
