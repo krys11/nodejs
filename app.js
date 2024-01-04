@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParer = require("body-parser");
-const path = require("path");
+const pathh = require("path");
 
 const app = express();
 const adminData = require("./routes/admin");
@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParer.urlencoded({ extended: false }));
-app.use(express.static(path.join(rootDir, "public")));
+app.use(express.static(pathh.join(rootDir, "public")));
 
 app.use("/admin", adminData.routes);
 app.use(userRoutes);
