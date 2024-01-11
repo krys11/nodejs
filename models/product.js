@@ -40,7 +40,7 @@ module.exports = class Product {
     const p = path.join(rootDir, "data", "products.json");
     fs.readFile(p, (error, data) => {
       if (error) return callBack([]);
-      const product = data.find((p) => p.id === id);
+      const product = JSON.parse(data).find((p) => p.id === id);
       return callBack(product);
     });
   }
