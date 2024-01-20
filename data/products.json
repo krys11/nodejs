@@ -1,16 +1,1 @@
-[
-  {
-    "id": "12345",
-    "title": "PS5",
-    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png",
-    "description": "Une console de salon",
-    "price": "15"
-  },
-  {
-    "id": "12346",
-    "title": "PS4",
-    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png",
-    "description": "Other",
-    "price": "10"
-  }
-]
+[]

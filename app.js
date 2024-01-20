@@ -7,6 +7,7 @@ const adminData = require("./routes/admin");
 const userRoutes = require("./routes/shop");
 const rootDir = require("./util/path");
 const errorController = require("./controllers/error");
+const mongoDb = require("./util/database");
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -19,6 +20,8 @@ app.use(userRoutes);
 
 app.use(errorController.get404);
 
-app.listen(3000, () => {
-  console.log("app launch");
+mongoDb.mongoConnect(() => {
+  app.listen(3000, () => {
+    console.log("app launch");
+  });
 });
